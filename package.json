@@ -1,0 +1,28 @@
+{
+  "name": "test_express",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Azwruuyh",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "bootstrap-icons": "^1.11.3",
+    "cat-me": "^1.0.3",
+    "cookie-parser": "^1.4.6",
+    "dotenv": "^16.4.5",
+    "ejs": "^3.1.10",
+    "express": "^4.19.2",
+    "express-session": "^1.18.0",
+    "git": "^0.1.5",
+    "got": "^14.4.2",
+    "jsonwebtoken": "^9.0.2",
+    "lodash": "^4.17.21",
+    "multer": "^1.4.5-lts.1",
+    "mysql": "^2.18.1",
+    "request": "^2.88.2"
+  }
+}

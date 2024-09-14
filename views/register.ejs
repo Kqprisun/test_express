@@ -1,0 +1,27 @@
+<%- include("partials/header"); %>
+
+    <form action="/auth/register" method="post">
+        <div class="mb-3">
+            <label for="name" class="form-label">Username</label>
+            <input type="text" class="form-control" id="name" maxlength="50" name="name">
+        </div>
+        <div class="mb-3">
+            <label for="email" class="form-label">Email adress</label>
+            <input type="email" class="form-control" id="email" maxlength="300" name="email">
+            <div id="idHelp" class="form-text">We'll never share your email with anyone else.</div>
+        </div>
+        <div class="mb-3">
+            <label for="password" class="form-label">Password</label>
+            <input type="password" class="form-control" id="password" maxlength="300" name="password">
+            <div id="idHelp" class="form-text">Your password is private.</div>
+        </div>
+        <div class="mb-3">
+            <label for="confirmPassword" class="form-label">Confirm Password</label>
+            <input type="password" class="form-control" id="confirmPassword" maxlength="300" name="confirmPassword">
+        </div>
+        <button type="submit" class="btn btn-primary">Register User</button>
+        <% if (typeof message !== 'undefined' && message) { %>
+            <h4 class="alert alert-danger mt-4"><%= message %></h4>
+        <% } %>    
+    </form>
+<%- include("partials/footer"); %>

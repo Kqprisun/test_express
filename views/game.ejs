@@ -1,0 +1,11 @@
+<%- include("partials/header"); %>
+
+        <h1 class="text-center">Game Title : <%= title %></h1>
+        <h2 class="text-center">Game Creator : <%= creator %></h2>
+        <% if(title == "Fortnite"){ %>
+            <p>Description: battle royale</p>
+        <% } else{ %>
+            <p>Connait pas le jeu</p>
+        <% } %>     
+
+<%- include("partials/footer"); %>

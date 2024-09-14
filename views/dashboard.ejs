@@ -1,0 +1,64 @@
+<%- include("partials/header"); %>
+    <div class="container text-center">
+        <h2>Welcome to your Dashboard</h2>
+        <% if (typeof username !== 'undefined' && username) { %>
+            <h4>Hello, <%= username %>!</h4>
+        <% } %>
+        <a href="/logout" class="btn btn-primary mt-4">Logout</a>
+    </div>
+    <div>
+        <% if(username === 'admin') { %>
+            <div class="card container text-center" style="margin-top: 10px; width: 18rem;">
+                <div class="card-body">
+                    <form action="/dashboard/addGame" method="POST" enctype="multipart/form-data">
+                        <div class="mb-3">
+                            <label for="gamename" class="form-label">Nom du jeu</label>
+                            <input type="text" class="form-control" id="gamename" maxlength="50" name="gamename" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="gamecreator" class="form-label">Créateur du jeu</label>
+                            <input type="text" class="form-control" id="gamecreator" maxlength="20" name="gamecreator" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="gameimage" class="form-label">Image du jeu</label>
+                            <input type="file" class="form-control" id="gameimage" name="gameimage" accept="image/*" required>
+                        </div>
+                        <button type="submit" class="container text-center btn btn-primary">Ajouter jeu</button>
+                    </form>
+                </div>
+            </div>
+            <div class="card container text-center" style="margin-top: 10px; width: 18rem;">
+                <form action="/dashboard/addQuestion" method="POST">
+                    <div class="mb-3">
+                        <label for="questionText" class="form-label">Question</label>
+                        <input type="text" class="form-control" id="questionText" name="questionText" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="option1" class="form-label">Option 1</label>
+                        <input type="text" class="form-control" id="option1" name="option1" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="option2" class="form-label">Option 2</label>
+                        <input type="text" class="form-control" id="option2" name="option2" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="option3" class="form-label">Option 3</label>
+                        <input type="text" class="form-control" id="option3" name="option3" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="option4" class="form-label">Option 4</label>
+                        <input type="text" class="form-control" id="option4" name="option4" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="correctOption" class="form-label">Bonne option (1 à 4)</label>
+                        <input type="number" class="form-control" id="correctOption" name="correctOption" min="1" max="4" required>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Ajouter la question</button>
+                </form>
+                
+            </div>
+        <% } else { %>
+            <h4>tu n'es pas admin</h4>
+        <% } %>
+    </div>
+<%- include("partials/footer"); %>
